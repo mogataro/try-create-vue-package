@@ -9,9 +9,14 @@ interface Props extends /* @vue-ignore */ ButtonHTMLAttributes {
 const props = withDefaults(defineProps<Props>(), {
   imgSrc: mogausaImgPath,
 })
+
+interface Emits {
+  (e: 'click', value?: MouseEvent): void
+}
+const emits = defineEmits<Emits>()
 </script>
 <template>
-  <button class="mogataro-button">
+  <button class="mogataro-button" @click="(event: MouseEvent) => emits('click', event)">
     <span class="mogataro-button__inner">
       <img
         v-if="props.imgSrc"
