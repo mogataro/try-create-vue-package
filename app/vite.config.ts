@@ -1,11 +1,13 @@
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    dts({ tsconfigPath: fileURLToPath(new URL('./tsconfig.app.json', import.meta.url)) })
   ],
   server: {
     watch: { usePolling: true },
@@ -20,7 +22,7 @@ export default defineConfig({
     lib: {
       entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
       name: 'mogataro-button',
-      fileName: (format) => `mogataro-button.${format}.js`
+      fileName: 'index'
     },
     rollupOptions: {
       external: ['vue'],

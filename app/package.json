@@ -1,6 +1,6 @@
 {
   "name": "mogataro-button",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "author": "Kouhei Negishi",
   "license": "MIT",
@@ -16,17 +16,18 @@
     "format": "prettier --write src/"
   },
   "description": "mogataro-button",
-  "main": "./dist/mogataro-button.umd.js",
-  "module": "./dist/mogataro-button.es.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.umd.cjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/mogataro-button.es.js",
-      "require": "./dist/mogataro-button.umd.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
     },
-    "./dist/style.css": "./dist/mogataro-button.css"
+    "./dist/style.css": "./dist/index.css"
   },
   "dependencies": {
     "vue": "^3.5.13"
@@ -44,6 +45,7 @@
     "prettier": "^3.3.3",
     "typescript": "~5.6.3",
     "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.0",
     "vue-tsc": "^2.1.10"
   }
 }
