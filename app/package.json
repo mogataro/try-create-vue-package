@@ -1,7 +1,9 @@
 {
-  "name": "try-create-vue-package",
+  "name": "mogataro-button",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
+  "author": "Kouhei Negishi",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,6 +14,19 @@
     "fix": "npm run format && npm run lint",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
+  },
+  "description": "mogataro-button",
+  "main": "./dist/mogataro-button.umd.js",
+  "module": "./dist/mogataro-button.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/mogataro-button.es.js",
+      "require": "./dist/mogataro-button.umd.js"
+    },
+    "./dist/style.css": "./dist/mogataro-button.css"
   },
   "dependencies": {
     "vue": "^3.5.13"
@@ -29,7 +44,6 @@
     "prettier": "^3.3.3",
     "typescript": "~5.6.3",
     "vite": "^6.0.5",
-    "vite-plugin-vue-devtools": "^7.6.8",
     "vue-tsc": "^2.1.10"
   }
 }

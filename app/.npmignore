@@ -1,0 +1,12 @@
+/node_modules
+/src
+/public
+.prettierrc.json
+eslint.config.js
+tsconfig.*
+index.html
+.pre
+.vscode
+main.ts
+compose.yml
+Dockerfile

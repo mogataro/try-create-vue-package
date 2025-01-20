@@ -1,5 +1,5 @@
 services:
-  app:
+  app: &app
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,3 +10,10 @@ services:
     ports:
       - 5173:5173
     command: npm run dev
+  setup:
+    image: busybox
+    depends_on:
+      - setup-node_module
+  setup-node_module:
+    <<: *app
+    command: npm ci
