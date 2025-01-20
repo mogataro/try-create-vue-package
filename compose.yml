@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - ./app:/app:cached
+    tty: true
+    ports:
+      - 5173:5173
+    command: npm run dev
