@@ -9,10 +9,16 @@
 ```vueファイル
 <script setup lang="ts">
 import { MogataroButton } from 'mogataro-button'
+import 'mogataro-button/dist/index.css'
+
+const imgSrc = 'https://www.mokosoft.com/app/wp-content/uploads/2016/03/icon.png'
+const onClick = (event: MouseEvent) => {
+  console.log(event)
+}
 </script>
 
 <template>
-  <MogataroButton>あああ</MogataroButton>
+  <MogataroButton type="button" :imgSrc="imgSrc" @click="onClick">ボタンテキスト</MogataroButton>
 </template>
 ```
 
