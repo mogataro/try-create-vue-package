@@ -14,9 +14,13 @@ interface Emits {
   (e: 'click', value?: MouseEvent): void
 }
 const emits = defineEmits<Emits>()
+
+const onClick = (event: MouseEvent) => {
+  emits('click', event)
+}
 </script>
 <template>
-  <button class="mogataro-button" @click="(event: MouseEvent) => emits('click', event)">
+  <button class="mogataro-button" @click="onClick">
     <span class="mogataro-button__inner">
       <img
         v-if="props.imgSrc"
